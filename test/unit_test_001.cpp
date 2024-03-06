@@ -73,10 +73,10 @@ unittest(test_constructor)
 
   // Overflow constructor
   float16ext big(1e6);
-  assertInfinity(big.toDouble());
+  assertEqualFloat(131008, big.toDouble(), 1);
 
   float16ext bag(-1e6);
-  assertInfinity(bag.toDouble());
+  assertEqualFloat(-131008, bag.toDouble(), 1);
 
   float16ext small(1e-30);
   assertEqualFloat(0.0, small.toDouble(), 1e-3);
